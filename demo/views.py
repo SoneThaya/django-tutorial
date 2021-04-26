@@ -6,7 +6,9 @@ from django.shortcuts import render
 
 # Create your views here.
 def first(request):
-    return render(request, 'first_temp.html')
+    books = Book.objects.all()
+    
+    return render(request, 'first_temp.html', {'books': books})
 
 
 
